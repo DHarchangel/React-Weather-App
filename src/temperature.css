@@ -5,6 +5,7 @@
   justify-content: space-between;
 }
 .city {
+  text-transform: capitalize;
   line-height: 10px;
 }
 .city p {

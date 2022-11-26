@@ -44,6 +44,7 @@ function Search() {
                     type="text"
                     placeholder="Enter a City ..."
                     id='search-box'
+                    autoFocus='on'
                 />
                 <input
                     type="submit"
