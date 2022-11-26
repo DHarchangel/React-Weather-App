@@ -1,0 +1,14 @@
+.App {
+  margin-top: 10vh;
+}
+.container {
+  margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  border: 2px solid rgb(37 39 89 / 8%);
+  border-radius: 10px;
+}
+.card {
+  margin: 20px;
+  text-align: center;
+}
