@@ -4,6 +4,10 @@
   text-align: left;
   justify-content: space-between;
 }
+.temp {
+  display: grid;
+  grid-template-columns: auto auto;
+}
 .city {
   text-transform: capitalize;
   line-height: 10px;
@@ -18,7 +22,7 @@
 }
 .tempDigit {
   font-size: 64px;
-  margin-right: 100px;
+  margin-right: 120px;
 }
 .temp h1 {
   position: relative;
@@ -26,7 +30,7 @@
 .symbol {
   position: absolute;
   top: 0;
-  left: 150px;
+  left: 80px;
 }
 .celsius,
 .farenheit {
@@ -34,29 +38,33 @@
 }
 @media (max-width: 600px) {
   .tempDigit {
-  font-size: 32px;
-  margin-right: 60px;
+    font-size: 32px;
+    margin-right: 60px;
+  }
+  .symbol {
+    top: 8px;
+    left: 50px;
+    font-size: 14px;
+  }
+  .city p {
+    font-size: 12px;
+  }
 }
-.symbol {
-  top: 8px;
-  left: 75px;
-  font-size: 14px;
-}
-.city p {
-  font-size: 12px;
-}
-}
-@media (max-width: 450px){
-  .city h1{
+@media (max-width: 300px) {
+  .city h1 {
     font-size: 24px;
   }
   .tempDigit {
-  font-size: 24px;
-  margin-right: 60px;
-}
-.symbol {
-  top: 15px;
-  left: 55px;
-  font-size: 10px;
-}
+    font-size: 24px;
+    margin-right: 60px;
+  }
+  .symbol {
+    top: 15px;
+    left: 30px;
+    font-size: 10px;
+  }
+  .img img {
+    height: 50px;
+    width: 50px;
+  }
 }

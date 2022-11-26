@@ -22,11 +22,13 @@
 .info{
     text-align: start !important;
 }
-@media (max-width: 450px) {
+@media (max-width: 400px) {
     #search-btn{
-    font-size: 14px;
+    font-size: 12px;
+    width: 30%;
 }
 #search-box{
-    font-size: 14px;
+    font-size: 12px;
+    width: 60%;
 }
 }
