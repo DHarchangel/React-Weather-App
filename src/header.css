@@ -1,0 +1,43 @@
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.headerList {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  list-style: none;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #aaa9a9;
+}
+.list {
+  cursor: pointer;
+}
+.logo {
+  color: var(--secondary);
+  font-weight: 800;
+  text-align: left;
+}
+.activeDot {
+  background: var(--primary);
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.active {
+  color: var(--primary);
+}
+.cityList {
+  flex: 1;
+  font-size: 12px;
+  font-weight: normal;
+}
+@media (max-width: 450px) {
+  .list {
+    font-size: 12px;
+  }
+  .logo {
+    font-size: 14px;
+  }
+}

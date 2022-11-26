@@ -1,0 +1,22 @@
+.forecast{
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+.icon{
+    font-size: 32px;
+}
+.forecast h2{
+    font-size: 14px;
+  color: #aaa9a9;
+
+}
+.units{
+    font-weight: 500;
+}
+@media (max-width: 450px){
+    .forecast h2, .units{
+    font-size: 12px;
+
+}
+}

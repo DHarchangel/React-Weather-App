@@ -6,8 +6,9 @@
     font-size: 18px;
     width: 70%;
     padding: 10px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-radius: 5px;
+    background: var(--secondary-color);
+    border: none;
 }
 #search-btn{
     font-size: 18px;
@@ -16,9 +17,16 @@
     color: white;
     background: var(--primary) ;
     border: none;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
 }
 .info{
     text-align: start !important;
+}
+@media (max-width: 450px) {
+    #search-btn{
+    font-size: 14px;
+}
+#search-box{
+    font-size: 14px;
+}
 }
