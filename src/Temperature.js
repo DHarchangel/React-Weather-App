@@ -1,5 +1,7 @@
 import React from 'react';
 import './temperature.css';
+import WeatherIcon from './WeatherIcon';
+import WeatherTemp from './WeatherTemp';
 
 function Temperature(props) {
   function formatDate() {
@@ -23,11 +25,13 @@ function Temperature(props) {
         <p>{props.data.description}</p>
         <p>Wind: <span className='units'>{props.data.wind}km/hr</span></p>
       </div>
-      <div className="temp">
-        <div className="img"><img src={props.data.icon} alt="Weather Icon" /></div>
-        <div>
-          <h1><span className='tempDigit'> {props.data.temperature} </span> <span className='symbol'> <span className='celsius'>℃ </span>|<span className='farenheit'> ℉</span> </span></h1>
+      <div className='tempIcon' >
+        <div className='icon'>
+
+        <WeatherIcon icon={props.data.icon} alt={props.data.description} />
         </div>
+        
+        <WeatherTemp celsius={props.data.temperature} />
 
       </div>
     </div>

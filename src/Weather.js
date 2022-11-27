@@ -17,10 +17,10 @@ function Search() {
         console.log(res.data);
         setWeatherData({
             ready: true,
-            temperature: Math.round(res.data.main.temp),
+            temperature: res.data.main.temp,
             date: new Date(res.data.dt * 1000),
             humidity: res.data.main.humidity,
-            icon: `http://openweathermap.org/img/wn/${res.data.weather[0].icon}@2x.png`,
+            icon: res.data.weather[0].icon,
             wind: res.data.wind.speed,
             description: res.data.weather[0].description,
             city: res.data.name

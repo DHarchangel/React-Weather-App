@@ -27,13 +27,25 @@
 .temp h1 {
   position: relative;
 }
+.tempIcon {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.icon {
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
 .symbol {
   position: absolute;
   top: 0;
   left: 80px;
 }
-.celsius,
-.farenheit {
+
+.click {
   cursor: pointer;
 }
 @media (max-width: 600px) {
@@ -67,4 +79,6 @@
     height: 50px;
     width: 50px;
   }
+  
+ 
 }

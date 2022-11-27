@@ -16,3 +16,7 @@ code {
   --secondary: #FC709B;
   --secondary-color: #f5f2fe;
 }
+a{
+  color: #8C66F1;
+  text-decoration: none;
+}
