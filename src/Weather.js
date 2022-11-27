@@ -4,8 +4,9 @@ import Header from './Header';
 import "./weather.css";
 import Temperature from './Temperature';
 import axios from 'axios';
+import { CirclesWithBar } from 'react-loader-spinner'
 
-function Search(props) {
+function Search() {
     function getCity(city) {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3a94f3778290bfeee61278505dbbe51d&units=metric`;
         axios.get(url).then(handleResponse);
@@ -65,7 +66,23 @@ function Search(props) {
         );
         } else {
     getCity(search);
-    return 'Loading...';
+        return (
+            <div className='spinner'>
+                <CirclesWithBar
+                    
+                    height="100"
+                    width="100"
+                    color="#FC709B"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    outerCircleColor="#8C66F1"
+                    innerCircleColor="#FC709B"
+                    barColor="#8C66F1"
+                    ariaLabel='circles-with-bar-loading'
+                />;
+            </div>
+        )
   }
 }
 
