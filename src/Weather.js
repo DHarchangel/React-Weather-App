@@ -4,14 +4,17 @@ import Header from './Header';
 import "./weather.css";
 import Temperature from './Temperature';
 import axios from 'axios';
-import { CirclesWithBar } from 'react-loader-spinner'
+import { CirclesWithBar } from 'react-loader-spinner';
 
-function Search() {
-    function getCity(city) {
+function Search(props) {
+    const [city, setCity] = useState(props.defaultCity);
+    const [weatherData, setWeatherData] = useState({ ready: false });
+
+    function getCity() {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3a94f3778290bfeee61278505dbbe51d&units=metric`;
         axios.get(url).then(handleResponse);
     }
-    const [weatherData, setWeatherData] = useState({ ready: false });
+    
     function handleResponse(res) {
 
         console.log(res.data);
@@ -23,53 +26,51 @@ function Search() {
             icon: res.data.weather[0].icon,
             wind: res.data.wind.speed,
             description: res.data.weather[0].description,
-            city: res.data.name
+            city: res.data.name,
+            coord: res.data.coord
         });
     }
 
 
-    let [search, setSearch] = useState('Onitsha');
-    
     function handleSubmit(e) {
         e.preventDefault();
-       getCity(search)
+        getCity();
 
     }
     function handleChange(e) {
-        setSearch(e.target.value);
+        setCity(e.target.value);
     }
-    
+
     if (weatherData.ready) {
-    return (
-        <div>
-            <Header/>
-            <form className='form' onSubmit={handleSubmit}>
-                <input
-                    onChange={handleChange}
-                    type="text"
-                    placeholder="Enter a City ..."
-                    id='search-box'
-                    autoFocus='on'
-                />
-                <input
-                    type="submit"
-                    placeholder="Enter a City ..."
-                    value="Search"
-                    id='search-btn'
-                />
-            </form>
-            <Temperature data={weatherData}  />
-            <Forecast />
-            <p><a href="https://github.com/DHarchangel/React-Weather-App" target='_blank' rel="noreferrer">Open Source App </a> Build by Angel</p>
-        </div>
+        return (
+            <div>
+                <Header />
+                <form className='form' onSubmit={handleSubmit}>
+                    <input
+                        onChange={handleChange}
+                        type="text"
+                        placeholder="Enter a City ..."
+                        id='search-box'
+                        autoFocus='on'
+                    />
+                    <input
+                        type="submit"
+                        value="Search"
+                        id='search-btn'
+                    />
+                </form>
+                <Temperature data={weatherData} />
+                <Forecast coords={weatherData.coord} />
+                <p><a href="https://github.com/DHarchangel/React-Weather-App" target='_blank' rel="noreferrer">Open Source App </a> Build by Angel</p>
+            </div>
 
         );
-        } else {
-    getCity(search);
+    } else {
+        getCity();
         return (
             <div className='spinner'>
                 <CirclesWithBar
-                    
+
                     height="100"
                     width="100"
                     color="#FC709B"
@@ -82,8 +83,8 @@ function Search() {
                     ariaLabel='circles-with-bar-loading'
                 />;
             </div>
-        )
-  }
+        );
+    }
 }
 
 export default Search;

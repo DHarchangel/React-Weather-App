@@ -28,7 +28,7 @@ function Temperature(props) {
       <div className='tempIcon' >
         <div className='icon'>
 
-        <WeatherIcon icon={props.data.icon} alt={props.data.description} />
+        <WeatherIcon icon={props.data.icon} size={52} />
         </div>
         
         <WeatherTemp celsius={props.data.temperature} />

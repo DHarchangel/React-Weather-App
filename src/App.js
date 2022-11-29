@@ -1,5 +1,5 @@
 import './App.css';
-import Search from './Weather';
+import Weather from './Weather';
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
       <div className="container">
         <div className="card">
 
-          <Search />
+          <Weather defaultCity= 'Onitsha' />
 
 
 

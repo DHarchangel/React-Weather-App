@@ -27,6 +27,6 @@ function WeatherTemp(props) {
 
         );
     }
-}
+} 
 
 export default WeatherTemp;
